@@ -7,3 +7,39 @@
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.16);
   padding: 30px 40px;
 }
+
+/* Header */
+.main__header {
+  width: 100%;
+  height: 100px;
+  padding: 10px 0 20px;
+}
+
+.main__header-date {
+  height: 50px;
+}
+
+.main__header-date-day {
+  font-size: 44px;
+  font-weight: bold;
+  color: #8862ff;
+  margin-right: 10px;
+}
+
+.main__header-date-month {
+  height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666666;
+}
+
+.main__header-date-year {
+  height: 18px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.main__header-week {
+  font-size: 14px;
+  color: #333333;
+}
