@@ -129,3 +129,128 @@
 .main__item-name.completed:after {
   width: 100%;
 }
+
+/* Footer */
+.main__footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+}
+
+.main__footer-create-button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #9891ff;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.16);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.main__footer-create-button.active {
+  bottom: 470px;
+  left: 0;
+}
+
+.main__footer-create-button:before,
+.main__footer-create-button:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.main__footer-create-button:before {
+  width: 20px;
+  height: 4px;
+}
+.main__footer-create-button:after {
+  width: 4px;
+  height: 20px;
+}
+
+.main__footer-create-button.active:before {
+  transform: translate(-50%, -50%) rotateZ(585deg);
+}
+.main__footer-create-button.active:after {
+  transform: translate(-50%, -50%) rotateZ(585deg);
+}
+
+/* Footer Popup */
+.main__footer-popup {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+  background-color: white;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 0px 30px;
+  transition: .5s;
+  overflow: hidden;
+}
+
+.main__footer-popup.show {
+  height: 470px;
+}
+
+.main__footer-popup-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+}
+
+.main__footer-input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border-bottom: solid 1px #cccccc;
+}
+
+.main__footer-input:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 1px;
+  background-color: #8862ff;
+  transition: .2s;
+}
+
+.main__footer-input.focus:after {
+  width: 100%;
+}
+
+.main__footer-input > input {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  border: none;
+}
+
+.main__footer-popup-button {
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #9891ff;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
