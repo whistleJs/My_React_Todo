@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from './header';
 import List from './list';
@@ -9,7 +9,14 @@ import Footer from './footer';
 import './index.css';
 
 function TodoMain() {
-  const [todoList, setTodoList] = useState([{ id: 1, name: 'test', isComplete: false }, { id: 2, name: 'test2', isComplete: true }]);
+  const [todoList, setTodoList] = useState([]);
+
+  // Mounted
+  useEffect(() => {
+    if (localStorage.todoList) {
+      setTodoList(JSON.parse(localStorage.todoList));
+    }
+  }, [])
 
   // Create Todo Item
   const onCreateTodoItem = (todoName) => {
@@ -22,6 +29,7 @@ function TodoMain() {
     const list = [...todoList, { name: todoName, isComplete: false }];
 
     setTodoList(list);
+    onSaveLocalStorage(list);
 
     alert('[알림] 성공적으로 할 일을 추가하였습니다.');
   }
@@ -32,6 +40,12 @@ function TodoMain() {
     list[index].isComplete = !list[index].isComplete;
 
     setTodoList(list);
+    onSaveLocalStorage(list);
+  }
+
+  // On Save in Localstorage
+  const onSaveLocalStorage = (list) => {
+    localStorage.todoList = JSON.stringify(list);
   }
 
   return (
